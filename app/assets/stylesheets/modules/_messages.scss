@@ -1,3 +1,38 @@
 * {
   box-sizing: border-box;
 }
+
+.wrapper {
+  display: flex;
+}
+
+.chat-bar {
+  height: 100vh;
+  width: 300px;
+  .top {
+    height: 100px;
+    background-color: #253141;
+  }
+  .group {
+    height: calc( 100vh - 100px );
+    background-color: #2f3e51;
+  }
+}
+
+.chat-main {
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  .info {
+    height: 100px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+  }
+  .main {
+    height: calc( 100vh - 190px );
+    background-color: #fafafa;
+  }
+  .form {
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+}
