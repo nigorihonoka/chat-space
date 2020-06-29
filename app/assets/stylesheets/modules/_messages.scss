@@ -15,18 +15,23 @@
     display: flex;
     align-items: center;
     .items {
-      background-color: #d8d8d8;
       height: 20px;
-      width: 260px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       &__name {
         width: 200px;
-        background-color: red;
+        color: #ffffff;
       }
       &__icons {
         width: 60px;
-        background-color: green;
+        text-align: end;
+        &__btn {
+          color: #ffffff;
+        }
+        &__btn--edit {
+          margin-right: 5px;
+        }
       }
     }
   }

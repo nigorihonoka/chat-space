@@ -3,5 +3,9 @@
     .items__name
       user
     .items__icons
-      icon
+      =link_to "#", class: "items__icons__btn items__icons__btn--edit" do
+        =icon("fas", "edit",)
+        %span<>
+      =link_to "#", class: "items__icons__btn items__icons__btn--cog" do
+        =icon("fas", "cog")
 .group
