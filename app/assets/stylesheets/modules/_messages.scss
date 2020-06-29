@@ -6,7 +6,7 @@
   display: flex;
 }
 
-.chat-bar {
+.side-bar {
   width: 300px;
   .top {
     height: 100px;
@@ -22,6 +22,8 @@
       &__name {
         width: 200px;
         color: #ffffff;
+        font: 16px;
+        font-weight: bold;
       }
       &__icons {
         width: 60px;
@@ -35,9 +37,20 @@
       }
     }
   }
-  .group {
+  .group-lists {
     height: calc( 100vh - 100px );
     background-color: #2f3e51;
+    .group {
+      padding: 20px 20px 40px;
+      color: #ffffff;
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
   }
 }
 
