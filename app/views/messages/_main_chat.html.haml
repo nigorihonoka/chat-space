@@ -27,4 +27,11 @@
           time1
       .message__text
         content1
-.form
+= form_with url: "#" do |form|
+  .form
+    .new-message
+      = form.text_area :text, placeholder: "type a message", class: "new-message__text"
+      = form.label :image, class:"new-message__image" do
+        = icon( "far", "image", class:"new-message__image--icon")
+        = form.file_field :image, class: "new-message__image--file"
+    = form.submit "Send", class: "send"

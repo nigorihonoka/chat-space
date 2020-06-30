@@ -125,5 +125,42 @@
   .form {
     height: 90px;
     background-color: #d2d2d2;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .new-message {
+      display: flex;
+      width: 100%;
+      position: relative;
+      &__text {
+        height: 50px;
+        width: 100%;
+        padding: 0 10px;
+        line-height: 45px;
+      }
+      &__image {
+        height: 50px;
+        position: absolute;
+        right: 10px;
+        &--icon {
+          line-height: 50px;
+          font-size: 24px;
+        }
+        &--file {
+          display: none;
+        }
+      }
+    }
+    .send {
+      height: 50px;
+      display: block;
+      padding: 0 30px;
+      background-color: #38aef0;
+      color: #fff;
+      font-size: 16px;
+      border-style: none;
+      margin-left: 15px;
+    }
   }
 }
