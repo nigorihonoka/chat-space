@@ -3,9 +3,11 @@
     .current-group
       .current-group__name
         %p group
-      .current-group__member-list
-        %p Taro
-  .rightbox
+      %ul.current-group__member-list
+        Member :
+        %li.current-group__member-list__member Taro
+        %li.current-group__member-list__member Eri
+  = link_to "#", class:"rightbox" do
     edit
 .main
 .form
