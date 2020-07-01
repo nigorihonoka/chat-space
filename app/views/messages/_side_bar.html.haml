@@ -1,0 +1,16 @@
+.top
+  .items
+    .items__name
+      user
+    .items__icons
+      =link_to "#", class: "items__icons__btn items__icons__btn--edit" do
+        =icon("fas", "edit",)
+        %span<>
+      =link_to "#", class: "items__icons__btn items__icons__btn--cog" do
+        =icon("fas", "cog")
+.group-lists
+  .group
+    .group__name
+      %p groupName
+    .group__message
+      %p groupMessage
