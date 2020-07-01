@@ -1,12 +1,12 @@
 .top
   .items
     .items__name
-      user
+      = current_user.name
     .items__icons
       =link_to "#", class: "items__icons__btn items__icons__btn--edit" do
         =icon("fas", "edit",)
         %span<>
-      =link_to "#", class: "items__icons__btn items__icons__btn--cog" do
+      =link_to edit_user_path(current_user.id), class: "items__icons__btn items__icons__btn--cog" do
         =icon("fas", "cog")
 .group-lists
   .group
