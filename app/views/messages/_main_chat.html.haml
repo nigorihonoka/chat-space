@@ -27,10 +27,10 @@
           date1
       .message__text
         message1
-= form_with url: "#" do |form|
+= form_with model: [@group, @message], html: {class: "Form"}, local: true do |form|
   .form
     .new-message
-      = form.text_area :text, placeholder: "type a message", class: "new-message__text"
+      = form.text_area :content, placeholder: "type a message", class: "new-message__text"
       = form.label :image, class:"new-message__image" do
         = icon( "far", "image", class:"new-message__image--icon")
         = form.file_field :image, class: "new-message__image--file"
