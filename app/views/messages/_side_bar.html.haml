@@ -1,16 +1,19 @@
-.top
-  .items
-    .items__name
-      = current_user.name
-    .items__icons
-      =link_to new_group_path, class: "items__icons__btn items__icons__btn--edit" do
-        =icon("fas", "edit",)
-        %span<>
-      =link_to edit_user_path(current_user.id), class: "items__icons__btn items__icons__btn--cog" do
-        =icon("fas", "cog")
-.group-lists
-  .group
-    .group__name
-      %p groupName
-    .group__message
-      %p groupMessage
+.side_bar
+  .top
+    .items
+      .items__name
+        = current_user.name
+      .items__icons
+        =link_to new_group_path, class: "items__icons__btn items__icons__btn--edit" do
+          =icon("fas", "edit",)
+          %span<>
+        =link_to edit_user_path(current_user.id), class: "items__icons__btn items__icons__btn--cog" do
+          =icon("fas", "cog")
+  .group-lists
+    - current_user.groups.each do |group|
+      .group
+        = link_to "#" do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません
