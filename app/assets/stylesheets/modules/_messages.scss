@@ -107,6 +107,7 @@ $header-height: 100px;
     height: calc( 100vh - 190px );
     background-color: #fafafa;
     padding: $padding-side;
+    overflow: scroll;
     .messages {
       padding-top: 35px;
       .message {
@@ -127,6 +128,9 @@ $header-height: 100px;
         &__text {
           font-size: 14px;
           color: #434a54;
+          .message__image {
+            height: 300px;
+          }
         }
       }
     }

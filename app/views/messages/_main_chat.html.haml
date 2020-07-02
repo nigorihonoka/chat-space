@@ -10,23 +10,7 @@
   = link_to "#", class:"rightbox" do
     edit
 .main
-  .messages
-    .message
-      .message__info
-        .message__info__name
-          name
-        .message__info__date
-          date
-      .message__text
-        message
-    .message
-      .message__info
-        .message__info__name
-          name1
-        .message__info__date
-          date1
-      .message__text
-        message1
+  = render @messages
 = form_with model: [@group, @message], html: {class: "Form"}, local: true do |form|
   .form
     .new-message
