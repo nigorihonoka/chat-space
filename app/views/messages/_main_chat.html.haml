@@ -1,38 +1,37 @@
-.chat_main
-  .info
-    .leftbox
-      .current-group
-        .current-group__name
-          %p group
-        %ul.current-group__member-list
-          Member :
-          %li.current-group__member-list__member Taro
-          %li.current-group__member-list__member Eri
-    = link_to "#", class:"rightbox" do
-      edit
-  .main
-    .messages
-      .message
-        .message__info
-          .message__info__name
-            name
-          .message__info__date
-            date
-        .message__text
-          message
-      .message
-        .message__info
-          .message__info__name
-            name1
-          .message__info__date
-            date1
-        .message__text
-          message1
-  = form_with url: "#" do |form|
-    .form
-      .new-message
-        = form.text_area :text, placeholder: "type a message", class: "new-message__text"
-        = form.label :image, class:"new-message__image" do
-          = icon( "far", "image", class:"new-message__image--icon")
-          = form.file_field :image, class: "new-message__image--file"
-      = form.submit "Send", class: "send"
+.info
+  .leftbox
+    .current-group
+      .current-group__name
+        %p group
+      %ul.current-group__member-list
+        Member :
+        %li.current-group__member-list__member Taro
+        %li.current-group__member-list__member Eri
+  = link_to "#", class:"rightbox" do
+    edit
+.main
+  .messages
+    .message
+      .message__info
+        .message__info__name
+          name
+        .message__info__date
+          date
+      .message__text
+        message
+    .message
+      .message__info
+        .message__info__name
+          name1
+        .message__info__date
+          date1
+      .message__text
+        message1
+= form_with url: "#" do |form|
+  .form
+    .new-message
+      = form.text_area :text, placeholder: "type a message", class: "new-message__text"
+      = form.label :image, class:"new-message__image" do
+        = icon( "far", "image", class:"new-message__image--icon")
+        = form.file_field :image, class: "new-message__image--file"
+    = form.submit "Send", class: "send"
