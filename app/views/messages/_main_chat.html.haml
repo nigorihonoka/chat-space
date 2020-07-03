@@ -2,12 +2,13 @@
   .leftbox
     .current-group
       .current-group__name
-        %p group
+        = @group.name
       %ul.current-group__member-list
         Member :
-        %li.current-group__member-list__member Taro
-        %li.current-group__member-list__member Eri
-  = link_to "#", class:"rightbox" do
+        - @group.users.each do |user|
+          %li.current-group__member-list__member
+            = user.name
+  = link_to edit_group_path(@group), class:"rightbox" do
     edit
 .main
   = render @messages
