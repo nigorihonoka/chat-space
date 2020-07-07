@@ -3,44 +3,44 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="messages">
-          <div class="message">
-            <div class="message__info">
-              <div class="message__info__name">
-                ${ message.user_name }
-              </div>
-              <div class="message__info__date">
-                ${ message.created_at }
-              </div>
+      `<div class="messages">
+        <div class="message">
+          <div class="message__info">
+            <div class="message__info__name">
+              ${ message.user_name }
             </div>
-            <div class="message__text">
-              <p class="message__content">
-                ${ message.content }
-              </p>
-              <img class="message__image" src="${ message.image }">
+            <div class="message__info__date">
+              ${ message.created_at }
             </div>
           </div>
-        </div>`
+          <div class="message__text">
+            <p class="message__content">
+              ${ message.content }
+            </p>
+            <img class="message__image" src="${ message.image }">
+          </div>
+        </div>
+      </div>`
       return html;
     } else {
       let html =
       `<div class="messages">
-          <div class="message">
-            <div class="message__info">
-              <div class="message__info__name">
-                ${ message.user_name }
-              </div>
-              <div class="message__info__date">
-                ${ message.created_at }
-              </div>
+        <div class="message">
+          <div class="message__info">
+            <div class="message__info__name">
+              ${ message.user_name }
             </div>
-            <div class="message__text">
-              <p class="message__content">
-                ${ message.content }
-              </p>
+            <div class="message__info__date">
+              ${ message.created_at }
             </div>
           </div>
-        </div>`
+          <div class="message__text">
+            <p class="message__content">
+              ${ message.content }
+            </p>
+          </div>
+        </div>
+      </div>`
       return html;
     };
   }
@@ -59,7 +59,8 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      console.log(html)
+      $('.main').append(html);      
+      $('form')[0].reset();
     })
   })
 });
