@@ -44,35 +44,6 @@ $(function(){
       return html;
     };
   }
-
-  $(".Form").on("submit", function(e) {
-    e.preventDefault()
-    let formData = new FormData(this);
-    let url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: "json",
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      let html = buildHTML(data)
-      $('.main').append(html)
-      $('.main').animate({ scrollTop: $('.main')[0].scrollHeight})
-      $('form')[0].reset()
-    })
-    .fail(function() {
-      alert("メッセージ送信に失敗しました")
-    })
-    .always(function(){
-      $(".send").prop("disabled", false)
-    })
-  })
-});
-
-$(function(){
   let reloadMessages = function() {
     let last_message_id = $('.messages:last').data("message-id");
     $.ajax({
@@ -88,6 +59,7 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.main').append(insertHTML);
+        $('.main').animate({ scrollTop: $('.main')[0].scrollHeight});
       }
     })
     .fail(function() {
