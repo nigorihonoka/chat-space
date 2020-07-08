@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-      `<div class="messages">
+      `<div class="messages" data-message-id=${message.id}>
         <div class="message">
           <div class="message__info">
             <div class="message__info__name">
@@ -24,7 +24,7 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="messages">
+      `<div class="messages" data-message-id=${message.id}>
         <div class="message">
           <div class="message__info">
             <div class="message__info__name">
@@ -70,4 +70,29 @@ $(function(){
       $(".send").prop("disabled", false)
     })
   })
+});
+
+$(function(){
+  let reloadMessages = function() {
+    let last_message_id = $('.messages:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        let insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.main').append(insertHTML);
+      }
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  setInterval(reloadMessages, 7000);
 });
